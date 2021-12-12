@@ -1,4 +1,4 @@
-const {Router} = require('express');
+const { Router } = require('express');
 
 class UserRouter {
   constructor() {
@@ -8,20 +8,9 @@ class UserRouter {
   }
 
   config() {
-    this.router.get('/users', (req, res) => {
-      res.status(200).json(
-          [
-            {name: 'Edier', lastName: 'Sanchez'},
-            {name: 'katherine', lastName: 'Salas'},
-          ]);
-    });
-    this.router.post('/users', (req, res) => {
-      let {name, lastName, email} = req.body;
-      console.log('name: ', name);
-      console.table(req.body);
-      res.status(201).json({message: 'user created'});
-
-    });
+    // Crear objeto UserController
+    const userC = new UserController();
+    this.router.post('/users', userC.register);
   }
 }
 

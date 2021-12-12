@@ -7,10 +7,10 @@ class ConnDb {
   }
 
   async connection() {
-    //this.connect = await mongoose.connect(db);
-    mongoose.connect(db).then(() => {
+    this.connect = await mongoose.connect(db);
+    /*mongoose.connect(db).then(() => {
       console.log('Successfully connected to database');
-    });
+    }); */
   }
 }
 
