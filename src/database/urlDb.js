@@ -1,3 +1,6 @@
+const  user = 'Edier_Sanz';
+const password = 'fVCpgQsprdLWWc4i';
+const database = 'myMongoDb';
 module.exports = {
-  db: "mongodb+srv://Edier_Sanz:Ingeniero1709@cluster0.fmgrw.mongodb.net/myMongoDb"
+  db: `mongodb+srv://${user}:${password}@cluster0.fmgrw.mongodb.net/${database}`,
 };

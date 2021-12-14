@@ -14,14 +14,17 @@ class Sever {
   config() {
     /* ---- Indicar que se procesarán datos en formato json en las peticiones a recibir ---- */
     this.app.use(express.json());
-    /* ---- Indicar el uso de morgan para el monitoreo de las peticiones http ---- */
-    this.app.use(morgan());
+    /**
+    *---- Indicar el uso de morgan para el monitoreo de las peticiones http ----
+    * Make sure you're not calling this.app.use(morgan) anywhere else in your code.
+    */
+    this.app.use(morgan('dev'));
     /* ---- Configurar y almacenar el puerto por el cual se ejecutará el servidor ----- */
     this.app.set('port', process.env.PORT || 3000);
     /* ---- Crear rutas ---- */
     let router = express.Router();
     router.get('/', (req, res) => {
-        res.status(200).json({ message: 'All O.K!' });
+        res.status(200).json({ message: 'All O.K...!' });
       });
     let userR = new UserRouter();
     /* ---- Agregar rutas a express ---- */

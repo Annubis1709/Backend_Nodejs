@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const UserController = require('../controllers/userController');
 
 class UserRouter {
   constructor() {
