@@ -1,5 +1,8 @@
+/* ----Importar dependencias---*/
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
+/** @Importar módulos */
 const UserRouter = require('./routers/userRouter');
 const ConnDb = require('./database/connDb');
 
