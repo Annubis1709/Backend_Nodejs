@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const jsonwebtoken = require('jsonwebtoken');
 
 class UserController {
   register(req, res) {
@@ -8,7 +9,9 @@ class UserController {
         if (error) {
           res.status(500).json({ info: 'Insert Error' });
         } else {
-          res.status(201).json({ info: 'User created successfully' });
+          console.log(doc);
+          let token = jsonwebtoken.sign('' + doc._id, 'gQsppWcrdLWfVC4i');
+          res.status(201).json({ token: token });
         }
       });
     } else {

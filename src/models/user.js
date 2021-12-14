@@ -1,5 +1,5 @@
 /* ---- Importar Mongoose --- */
-const { Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 /* ---- Crear un esquema de los datos ---- */
 const userSchema = Schema({
     name: {
