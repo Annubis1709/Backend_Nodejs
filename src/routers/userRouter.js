@@ -12,6 +12,8 @@ class UserRouter {
     // Crear objeto UserController
     const userC = new UserController();
     this.router.post('/users', userC.register);
+    this.router.post('/users/auth', userC.login);
+    this.router.put('/users', userC.update);
   }
 }
 
