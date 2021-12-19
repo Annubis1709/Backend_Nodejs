@@ -10,7 +10,7 @@ class UserController {
           res.status(500).json({ info: 'Insert Error' });
         } else {
           console.log(doc);
-          let token = jsonwebtoken.sign('' + doc._id, 'gQsppWcrdLWfVC4i');
+          let token = jsonwebtoken.sign(`${doc._id}`, process.env.NODE_PRIVATE_KEY);
           res.status(201).json({ token: token });
         }
       });
